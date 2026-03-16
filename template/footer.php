@@ -1,4 +1,4 @@
-<div class="pt-3">
+<div id="qrcdr-footer" class="pt-3">
   <div class="container">
     <hr>
   	<div class="row pt-5 pb-4">
