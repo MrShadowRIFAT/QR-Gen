@@ -1,12 +1,27 @@
-<div id="qrcdr-landing" class="bg-primary position-relative">
-  <div class="overlay-gradient"></div>
-  <div class="container position-relative">
-  	<div class="row py-5">
-    	<div class="col">
-        <h1 class="display-1">QR Code Generator</h1>
-        <p>This is an example of header.<br>Place here your contents, or remove the file <code>/template/<span class="bg-danger text-white px-1">header.php</span></code>.</p>
-        <p><a href="#" id="start-generating-btn" class="btn btn-primary btn-lg shadow" role="button">Start Generating &raquo;</a></p>
+<div id="qrcdr-landing" class="qrcdr-landing-ui">
+  <header class="qrcdr-landing-header">
+    <div class="container qrcdr-landing-nav">
+      <a href="#" class="qrcdr-logo" onclick="event.preventDefault()">
+        <span class="qrcdr-logo-icon"><i data-lucide="qr-code"></i></span>
+        <span>
+          <strong>QR Generator</strong>
+          <small>Create. Scan. Share.</small>
+        </span>
+      </a>
+      <button id="start-generating-btn" class="qrcdr-start-btn" type="button">Start Generating</button>
     </div>
+  </header>
+
+  <main class="qrcdr-landing-main">
+    <div class="qrcdr-glow qrcdr-glow-a"></div>
+    <div class="qrcdr-glow qrcdr-glow-b"></div>
+    <div class="container text-center">
+      <span class="qrcdr-pill"><i data-lucide="zap"></i> QR Code Generator v2.0</span>
+      <h1>Generate QR Codes <span>Instantly</span></h1>
+      <p>Create beautiful, customizable QR codes for links, business cards, WiFi, and more in seconds.</p>
+      <div class="qrcdr-landing-actions">
+        <button id="start-generating-btn-hero" class="qrcdr-start-btn" type="button"><i data-lucide="qr-code"></i> Start Generating</button>
+      </div>
     </div>
-  </div>
+  </main>
 </div>

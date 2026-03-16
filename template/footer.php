@@ -1,21 +1,15 @@
-<div id="qrcdr-footer" class="pt-3">
+<footer id="qrcdr-footer" class="qrcdr-landing-footer">
   <div class="container">
-    <hr>
-  	<div class="row pt-5 pb-4">
-    	<div class="col">
-        <p>This is an example of footer. Place here your contents, or remove the file <code>/template/<span class="bg-danger text-white px-1">footer.php</span></code>.</p>
+    <div class="qrcdr-footer-top">
+      <div class="qrcdr-footer-brand">
+        <span class="qrcdr-logo-icon"><i data-lucide="qr-code"></i></span>
+        <strong>QR Generator</strong>
       </div>
+      <p>The fastest way to create, customize, and share QR codes for any purpose.</p>
     </div>
-    <hr>
-    <div class="row py-2 small mb-3">
-      <div class="col-6"><?php echo qrcdr()->getString('title').' &copy; '.date('Y'); ?></div>
-      <div class="col-6">
-        <?php
-        if (file_exists(dirname(dirname(__FILE__)).'/'.$relative.'template/modals.php')) {
-            include dirname(dirname(__FILE__)).'/'.$relative.'template/modals.php';
-        }
-        ?>
-      </div>
+    <div class="qrcdr-footer-bottom">
+      <span style="font-family: 'JetBrains Mono', monospace;"><?php echo qrcdr()->getString('title').' &copy; '.date('Y'); ?></span>
+      <a href="https://rifat.website" target="_blank" rel="noopener noreferrer">rifat.website</a>
     </div>
   </div>
-</div>
+</footer>

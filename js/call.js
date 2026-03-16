@@ -4,6 +4,10 @@ $(document).ready(function(){
         svglogo : false
     });
 
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+    }
+
     function activateGeneratorMode() {
         $('#qrcdr-landing').addClass('d-none');
         $('#qrcdr-top-nav').addClass('d-none');
@@ -12,7 +16,7 @@ $(document).ready(function(){
         $('html, body').animate({ scrollTop: 0 }, 200);
     }
 
-    $('#start-generating-btn').on('click', function(event){
+    $('#start-generating-btn, #start-generating-btn-hero').on('click', function(event){
         event.preventDefault();
         activateGeneratorMode();
     });

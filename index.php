@@ -43,6 +43,8 @@ require $absolute.'/include/head.php';
         <meta name="keywords" content="<?php echo qrcdr()->getString('tags'); ?>">
         <link href="<?php echo $relative; ?>bootstrap/css/bootstrap<?php echo $rtl['css']; ?>.min.css" rel="stylesheet">
         <link href="<?php echo $relative; ?>css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
         <script src="<?php echo $relative; ?>js/jquery-3.7.1.min.js"></script>
         <?php
         $custom_page = false;

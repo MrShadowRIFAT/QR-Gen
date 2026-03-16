@@ -419,3 +419,182 @@ input.cropit-image-zoom-input {
 .ltr{
     direction: ltr;
 }
+
+/* Landing UI */
+.qrcdr-landing-ui {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #f0f0f5;
+    font-family: 'Outfit', sans-serif;
+}
+.qrcdr-landing-header {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(180deg, rgba(10,10,15,0.98) 0%, rgba(10,10,15,0.9) 100%);
+}
+.qrcdr-landing-nav {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.qrcdr-logo {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    color: #f0f0f5;
+}
+.qrcdr-logo:hover {
+    color: #f0f0f5;
+}
+.qrcdr-logo small {
+    display: block;
+    color: #6366f1;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+}
+.qrcdr-logo-icon {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    box-shadow: 0 6px 20px rgba(99,102,241,0.35);
+}
+.qrcdr-start-btn {
+    border: 0;
+    color: #f0f0f5;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 8px 30px rgba(99,102,241,0.35);
+}
+.qrcdr-start-btn i {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: text-bottom;
+}
+.qrcdr-landing-main {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 110px 0 130px;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+.qrcdr-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.35;
+    z-index: 1;
+}
+.qrcdr-glow-a {
+    width: 200px;
+    height: 200px;
+    background: #6366f1;
+    top: 20%;
+    left: 10%;
+}
+.qrcdr-glow-b {
+    width: 150px;
+    height: 150px;
+    background: #8b5cf6;
+    bottom: 20%;
+    right: 15%;
+}
+.qrcdr-landing-main .container {
+    position: relative;
+    z-index: 2;
+}
+.qrcdr-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+    padding: 8px 14px;
+    color: #8b9cf6;
+    border: 1px solid rgba(99,102,241,0.25);
+    background: rgba(99,102,241,0.08);
+}
+.qrcdr-pill i {
+    width: 14px;
+    height: 14px;
+}
+.qrcdr-landing-main h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    color: #f0f0f5;
+}
+.qrcdr-landing-main h1 span {
+    background: linear-gradient(135deg, #6366f1, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.qrcdr-landing-main p {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    color: #a0a0b0;
+    font-size: 18px;
+}
+.qrcdr-landing-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.qrcdr-landing-footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(180deg, rgba(10,10,15,0.95) 0%, #0a0a0f 100%);
+    color: #f0f0f5;
+    padding: 44px 0 24px;
+}
+.qrcdr-footer-top {
+    text-align: center;
+}
+.qrcdr-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.qrcdr-footer-top p {
+    color: #8a8a9a;
+}
+.qrcdr-footer-bottom {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+.qrcdr-footer-bottom a {
+    color: #6366f1;
+}
+@media (max-width: 768px) {
+    .qrcdr-landing-main {
+        padding: 72px 0 90px;
+    }
+    .qrcdr-landing-main h1 {
+        font-size: 38px;
+    }
+    .qrcdr-landing-main p {
+        font-size: 16px;
+    }
+    .qrcdr-footer-bottom {
+        flex-direction: column;
+    }
+    .qrcdr-start-btn {
+        padding: 10px 16px;
+    }
+}
