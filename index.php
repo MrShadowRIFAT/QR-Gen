@@ -28,6 +28,7 @@ if (qrcdr()->getConfig('debug_mode')) {
 }
 $relative = qrcdr()->relativePath();
 $absolute = qrcdr()->basePath();
+$runtime = getenv('VERCEL') ? 'vercel' : 'default';
 
 require $absolute.'/include/head.php';
 ?>
@@ -60,7 +61,7 @@ require $absolute.'/include/head.php';
         qrcdr()->setMainColor(qrcdr()->getConfig('color_primary'));
         ?>
     </head>
-    <body class="<?php echo $body_class; ?>">
+    <body class="<?php echo $body_class; ?>" data-runtime="<?php echo $runtime; ?>">
         <?php
         if (file_exists($absolute.'/template/navbar.php')) {
             include $absolute.'/template/navbar.php';
