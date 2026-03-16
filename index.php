@@ -1,15 +1,6 @@
 <?php
 /**
  * QRcdr - php QR Code generator
- * index.php
- *
- * PHP version 5.4+
- *
- * @category  PHP
- * @package   QRcdr
- * @author    Nicola Franchini <info@veno.it>
- * @copyright 2015-2021 Nicola Franchini
- * @license   item sold on codecanyon https://codecanyon.net/item/qrcdr-responsive-qr-code-generator/9226839
  * @version   5.3.9
  * @link      http://veno.es/qrcdr/
  */
