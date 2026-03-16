@@ -21,7 +21,7 @@
             var plugin = this;
             var $myForm, formInputs, formOnInput, formOnChange, submitform, linksholder, qrcolorpicker, colorpickerback, preloader, alert_placeholder, transparent_bg, resultholder, generate_qrcode_btn, holdresult;
             var collapse_control, collapse_control_reverse, upmarker, isSvg, event, map, timer, setvalue, yesdonation, nodonation, init_lat, init_lng, btcInput, settings, tabs, section, relative, sendOptions, slider;
-            var removebg, exportbg, gradientbg, transbg, imagefield, selectbg, cropinput, imageeditor, collapsebg, cropzoom, croppreview, negative;
+            var removebg, exportbg, gradientbg, transbg, imagefield, selectbg, cropinput, imageeditor, collapsebg, cropzoom, croppreview, negative, runtime, isVercelRuntime;
 
             var svgIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 48 48"><path d="M28.9,18.4l-3.4,3.4V10.5C25.5,9.7,24.8,9,24,9s-1.5,0.7-1.5,1.5v11.4l-3.4-3.4c-0.6-0.6-1.5-0.6-2.1,0 c-0.6,0.6-0.6,1.5,0,2.1l6,6c0.6,0.6,1.5,0.6,2.1,0c0,0,0,0,0,0l6-6c0.6-0.6,0.6-1.5,0-2.1C30.5,17.9,29.5,17.9,28.9,18.4z"/><path d="M42,30V13.5L28.5,0H12C8.7,0,6,2.7,6,6v24c-1.7,0.1-3,1.4-3,3.1v5.8c0,1.7,1.3,3,3,3.1v0c0,3.3,2.7,6,6,6h24 c3.3,0,6-2.7,6-6v0c1.7-0.1,3-1.4,3-3.1v-5.8C45,31.4,43.7,30.1,42,30z M36,45H12c-1.7,0-3-1.3-3-3h30C39,43.7,37.7,45,36,45z M16.6,37.2c-0.2-0.2-0.4-0.3-0.7-0.4c-0.3-0.1-0.6-0.2-1.1-0.3c-0.6-0.1-1.1-0.3-1.6-0.5c-0.4-0.2-0.8-0.5-1-0.8 c-0.2-0.3-0.4-0.8-0.4-1.3c0-0.5,0.1-0.9,0.4-1.3c0.3-0.4,0.6-0.7,1.1-0.9c0.5-0.2,1.1-0.3,1.7-0.3c0.5,0,1,0.1,1.4,0.2 c0.4,0.1,0.7,0.3,1,0.5c0.3,0.2,0.4,0.4,0.6,0.7c0.1,0.2,0.2,0.5,0.2,0.7c0,0.2-0.1,0.4-0.2,0.6s-0.3,0.3-0.6,0.3 c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.3-0.3-0.5c-0.2-0.3-0.3-0.6-0.6-0.8c-0.2-0.2-0.6-0.3-1.1-0.3c-0.5,0-0.8,0.1-1.1,0.3 s-0.4,0.4-0.4,0.7c0,0.2,0,0.3,0.1,0.4c0.1,0.1,0.2,0.2,0.4,0.3c0.2,0.1,0.3,0.2,0.5,0.2c0.2,0.1,0.4,0.1,0.8,0.2 c0.5,0.1,0.9,0.2,1.3,0.4c0.4,0.1,0.7,0.3,1,0.5c0.3,0.2,0.5,0.4,0.6,0.7s0.2,0.7,0.2,1.1c0,0.5-0.1,1-0.4,1.4 c-0.3,0.4-0.7,0.7-1.2,1c-0.5,0.2-1.1,0.4-1.8,0.4c-0.9,0-1.6-0.2-2.1-0.5c-0.4-0.2-0.7-0.5-1-0.9c-0.2-0.4-0.4-0.8-0.4-1.1 c0-0.2,0.1-0.4,0.2-0.5s0.3-0.2,0.6-0.2c0.2,0,0.3,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.3,0.5c0.1,0.3,0.2,0.5,0.4,0.7s0.3,0.3,0.5,0.5 c0.2,0.1,0.5,0.2,0.9,0.2c0.5,0,0.9-0.1,1.3-0.4c0.3-0.2,0.5-0.5,0.5-0.9C16.9,37.7,16.8,37.4,16.6,37.2z M19.5,32.4 c0-0.2,0.1-0.4,0.2-0.5s0.4-0.2,0.6-0.2c0.3,0,0.5,0.1,0.6,0.3c0.1,0.2,0.2,0.5,0.4,0.9l2,5.8l2-5.8c0.1-0.3,0.2-0.5,0.2-0.6 c0.1-0.1,0.1-0.2,0.3-0.3c0.1-0.1,0.3-0.1,0.5-0.1c0.2,0,0.3,0,0.4,0.1c0.1,0.1,0.2,0.2,0.3,0.3s0.1,0.2,0.1,0.4c0,0.1,0,0.2,0,0.3 S27,32.8,27,32.9c0,0.1-0.1,0.2-0.1,0.3l-2.1,5.6c-0.1,0.2-0.2,0.4-0.2,0.6c-0.1,0.2-0.2,0.4-0.3,0.5s-0.2,0.3-0.4,0.4 s-0.4,0.1-0.6,0.1c-0.2,0-0.4,0-0.6-0.1c-0.2-0.1-0.3-0.2-0.4-0.4c-0.1-0.2-0.2-0.3-0.3-0.5c-0.1-0.2-0.1-0.4-0.2-0.6l-2.1-5.6 c0-0.1-0.1-0.2-0.1-0.3c0-0.1-0.1-0.2-0.1-0.3C19.5,32.5,19.5,32.4,19.5,32.4z M30.4,38.3c0.5,0.5,1.1,0.8,1.9,0.8 c0.4,0,0.8-0.1,1.1-0.2c0.4-0.1,0.7-0.3,1.1-0.5v-1.4h-1.4c-0.3,0-0.6,0-0.7-0.1c-0.2-0.1-0.3-0.3-0.3-0.5c0-0.2,0.1-0.4,0.2-0.5 c0.1-0.1,0.3-0.2,0.6-0.2h2c0.2,0,0.5,0,0.6,0.1c0.2,0,0.3,0.1,0.4,0.3c0.1,0.1,0.2,0.4,0.2,0.7v1.7c0,0.2,0,0.4-0.1,0.5 c0,0.1-0.1,0.2-0.2,0.4s-0.3,0.2-0.4,0.3c-0.5,0.3-1,0.5-1.5,0.6s-1,0.2-1.6,0.2c-0.7,0-1.3-0.1-1.8-0.3c-0.5-0.2-1-0.5-1.4-0.9 c-0.4-0.4-0.7-0.9-0.9-1.4c-0.2-0.6-0.3-1.2-0.3-1.9c0-0.7,0.1-1.3,0.3-1.8c0.2-0.6,0.5-1,0.9-1.4s0.9-0.7,1.4-0.9 c0.6-0.2,1.2-0.3,1.9-0.3c0.6,0,1.1,0.1,1.5,0.2s0.8,0.4,1.1,0.6c0.3,0.2,0.5,0.5,0.6,0.7c0.1,0.3,0.2,0.5,0.2,0.7 c0,0.2-0.1,0.4-0.2,0.6s-0.4,0.2-0.6,0.2c-0.1,0-0.2,0-0.4-0.1c-0.1-0.1-0.2-0.1-0.3-0.2c-0.2-0.3-0.4-0.6-0.5-0.8 c-0.1-0.2-0.4-0.3-0.6-0.4c-0.3-0.1-0.6-0.2-1-0.2c-0.4,0-0.8,0.1-1.1,0.2s-0.6,0.3-0.8,0.6s-0.4,0.6-0.5,1 c-0.1,0.4-0.2,0.8-0.2,1.3C29.7,37,29.9,37.8,30.4,38.3z M39,30H9V6c0-1.7,1.3-3,3-3h16.5v6c0,2.5,2,4.5,4.5,4.5h6V30z"/></svg>';
             var pngIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 48 48"><path d="M28.9,18.4l-3.4,3.4V10.5C25.5,9.7,24.8,9,24,9s-1.5,0.7-1.5,1.5v11.4l-3.4-3.4c-0.6-0.6-1.5-0.6-2.1,0 c-0.6,0.6-0.6,1.5,0,2.1l6,6c0.6,0.6,1.5,0.6,2.1,0c0,0,0,0,0,0l6-6c0.6-0.6,0.6-1.5,0-2.1C30.5,17.9,29.5,17.9,28.9,18.4z"/><path d="M42,30V13.5L28.5,0H12C8.7,0,6,2.7,6,6v24c-1.7,0.1-3,1.4-3,3.1v5.8c0,1.7,1.3,3,3,3.1v0c0,3.3,2.7,6,6,6h24 c3.3,0,6-2.7,6-6v0c1.7-0.1,3-1.4,3-3.1v-5.8C45,31.4,43.7,30.1,42,30z M36,45H12c-1.7,0-3-1.3-3-3h30C39,43.7,37.7,45,36,45z M11.5,39.3v-6.6c0-0.4,0.1-0.7,0.3-0.8s0.5-0.2,0.8-0.2h2.2c0.7,0,1.2,0.1,1.5,0.2c0.4,0.1,0.7,0.3,0.9,0.5s0.4,0.5,0.6,0.8 s0.2,0.7,0.2,1.1c0,0.9-0.3,1.5-0.8,2s-1.3,0.7-2.4,0.7h-1.6v2.4c0,0.3-0.1,0.6-0.2,0.8s-0.4,0.3-0.6,0.3c-0.3,0-0.5-0.1-0.6-0.3 S11.5,39.6,11.5,39.3z M19.5,39.3v-6.6c0-0.3,0-0.5,0.1-0.7c0.1-0.2,0.2-0.3,0.4-0.4s0.4-0.2,0.6-0.2c0.2,0,0.3,0,0.4,0.1 s0.2,0.1,0.3,0.2s0.2,0.2,0.3,0.3s0.2,0.3,0.3,0.4l3.3,5.1v-5.1c0-0.3,0.1-0.6,0.2-0.7s0.3-0.2,0.6-0.2c0.3,0,0.4,0.1,0.6,0.2 s0.2,0.4,0.2,0.7v6.8c0,0.8-0.3,1.1-0.9,1.1c-0.2,0-0.3,0-0.4-0.1s-0.2-0.1-0.4-0.2s-0.2-0.2-0.3-0.3s-0.2-0.3-0.3-0.4l-3.3-5v5 c0,0.3-0.1,0.6-0.2,0.7s-0.3,0.3-0.6,0.3c-0.2,0-0.4-0.1-0.6-0.3S19.5,39.7,19.5,39.3z M30.7,38.2c0.5,0.5,1.1,0.8,1.9,0.8 c0.4,0,0.8-0.1,1.1-0.2s0.7-0.3,1.1-0.5V37h-1.3c-0.3,0-0.6,0-0.7-0.1s-0.2-0.3-0.2-0.5c0-0.2,0.1-0.4,0.2-0.5s0.3-0.2,0.6-0.2h2 c0.2,0,0.4,0,0.6,0.1s0.3,0.1,0.4,0.3s0.2,0.4,0.2,0.7v1.6c0,0.2,0,0.4-0.1,0.5s-0.1,0.2-0.2,0.4s-0.3,0.2-0.4,0.3 c-0.5,0.3-1,0.5-1.5,0.6s-1,0.2-1.6,0.2c-0.7,0-1.3-0.1-1.8-0.3s-1-0.5-1.4-0.9s-0.7-0.9-0.9-1.4s-0.3-1.2-0.3-1.8 c0-0.7,0.1-1.3,0.3-1.8s0.5-1,0.9-1.4s0.9-0.7,1.4-0.9s1.2-0.3,1.9-0.3c0.6,0,1.1,0.1,1.5,0.2s0.8,0.3,1.1,0.6s0.5,0.5,0.6,0.7 s0.2,0.5,0.2,0.7c0,0.2-0.1,0.4-0.2,0.6s-0.4,0.2-0.6,0.2c-0.1,0-0.2,0-0.4-0.1s-0.2-0.1-0.3-0.2c-0.2-0.3-0.4-0.6-0.5-0.8 s-0.3-0.3-0.6-0.4s-0.6-0.2-1-0.2c-0.4,0-0.8,0.1-1.1,0.2s-0.6,0.3-0.8,0.6s-0.4,0.6-0.5,1S30,35.4,30,35.9 C30,36.9,30.3,37.6,30.7,38.2z M39,30H9V6c0-1.7,1.3-3,3-3h16.5v6c0,2.5,2,4.5,4.5,4.5h6V30z"/><path d="M15.5,35.4c0.3-0.1,0.5-0.2,0.6-0.4s0.2-0.5,0.2-0.8c0-0.4-0.1-0.7-0.3-0.9c-0.3-0.3-0.8-0.4-1.5-0.4h-1.2v2.6h1.2 C14.8,35.5,15.2,35.5,15.5,35.4z"/></svg>';
@@ -84,6 +84,8 @@
                 cropzoom = obj.find('.cropit-image-zoom-input');
                 croppreview = obj.find('.cropit-preview');
                 negative = obj.find('.negative-code');
+                runtime = $('body').data('runtime') || 'default';
+                isVercelRuntime = (runtime === 'vercel');
 
                 isSvg = 'no';
 
@@ -414,42 +416,17 @@
 
                         try {
 
-                            // Convertiamo il payload nel formato richiesto da chunk-create.php
-                            let payload = {
-                                create: dataObj
-                            };
-
-                            // ✨ Invio CHUNK → chunk-create.php → ricostruzione → create.php
-                            let msg = await sendChunks(relative + "ajax/chunk-create.php", payload);
-
-                            if (!msg) {
-                                alert_placeholder.html("Errore: risposta vuota da chunk-create");
-                                $('.toast').toast('show');
-                                preloader.fadeOut('slow');
-                                return;
-                            }
-
-                            var getdata = JSON.parse(msg);
-
-                            if (getdata.error) {
-                                alert_placeholder.html(getdata.error);
-                                $('.toast').toast('show');
-                            } else {
-
-                                var filepath = getdata.filedir + '/' + getdata.basename;
-
+                            if (isVercelRuntime) {
+                                var basename = 'qrcode-' + Date.now();
+                                var svgBlob = new Blob([dataObj.content], {type: 'image/svg+xml;charset=utf-8'});
+                                var svgUrl = URL.createObjectURL(svgBlob);
                                 var downloadlinks =
-                                    '<button class="btn btn-default svgtopng" data-path="' + filepath + '">' + pngIcon + '</button>' +
+                                    '<button class="btn btn-default svgtopng" data-svg-url="' + svgUrl + '">' + pngIcon + '</button>' +
                                     '<a href="#" class="btn btn-default d-none preload-png">' + loadIcon + '</a>' +
-                                    '<a class="serve-png d-none" href="' + filepath + '.png" download="' + getdata.basename + '.png">PNG</a>';
+                                    '<a class="serve-png d-none" href="#" download="' + basename + '.png">PNG</a>';
 
                                 downloadlinks +=
-                                    '<a class="btn btn-default serve-svg" href="' + filepath + '.svg" download="' + getdata.basename + '.svg">' + svgIcon + '</a>';
-
-                                if (!dataObj.nopdf) {
-                                    downloadlinks +=
-                                        '<a target="_blank" class="btn btn-default" href="' + relative + 'pdf/?f=' + getdata.basename + usefonts + '">' + pdfIcon + '</a>';
-                                }
+                                    '<a class="btn btn-default serve-svg" href="' + svgUrl + '" download="' + basename + '.svg">' + svgIcon + '</a>';
 
                                 downloadlinks += '<button class="btn btn-default print">' + printIcon + '</button>';
 
@@ -459,6 +436,53 @@
                                 obj.find('.print').on('click', function(){
                                     printIt('.serve-svg');
                                 });
+                            } else {
+                                // Convertiamo il payload nel formato richiesto da chunk-create.php
+                                let payload = {
+                                    create: dataObj
+                                };
+
+                                // ✨ Invio CHUNK → chunk-create.php → ricostruzione → create.php
+                                let msg = await sendChunks(relative + "ajax/chunk-create.php", payload);
+
+                                if (!msg) {
+                                    alert_placeholder.html("Errore: risposta vuota da chunk-create");
+                                    $('.toast').toast('show');
+                                    preloader.fadeOut('slow');
+                                    return;
+                                }
+
+                                var getdata = JSON.parse(msg);
+
+                                if (getdata.error) {
+                                    alert_placeholder.html(getdata.error);
+                                    $('.toast').toast('show');
+                                } else {
+
+                                    var filepath = getdata.filedir + '/' + getdata.basename;
+
+                                    var downloadlinks =
+                                        '<button class="btn btn-default svgtopng" data-path="' + filepath + '">' + pngIcon + '</button>' +
+                                        '<a href="#" class="btn btn-default d-none preload-png">' + loadIcon + '</a>' +
+                                        '<a class="serve-png d-none" href="' + filepath + '.png" download="' + getdata.basename + '.png">PNG</a>';
+
+                                    downloadlinks +=
+                                        '<a class="btn btn-default serve-svg" href="' + filepath + '.svg" download="' + getdata.basename + '.svg">' + svgIcon + '</a>';
+
+                                    if (!dataObj.nopdf) {
+                                        downloadlinks +=
+                                            '<a target="_blank" class="btn btn-default" href="' + relative + 'pdf/?f=' + getdata.basename + usefonts + '">' + pdfIcon + '</a>';
+                                    }
+
+                                    downloadlinks += '<button class="btn btn-default print">' + printIcon + '</button>';
+
+                                    linksholder.html(downloadlinks);
+                                    generate_qrcode_btn.attr('disabled', true);
+
+                                    obj.find('.print').on('click', function(){
+                                        printIt('.serve-svg');
+                                    });
+                                }
                             }
 
                             preloader.fadeOut('slow');
@@ -630,10 +654,14 @@
 
                     filename = servePng.attr('download');
 
-                    // var d = new Date();
-                    // var n = d.getTime();
-                    // imgSrc = link.data('path')+'.svg?t='+n;
-                    imgSrc = link.data('path')+'.svg';
+                    if (isVercelRuntime) {
+                        imgSrc = link.attr('data-svg-url');
+                    } else {
+                        // var d = new Date();
+                        // var n = d.getTime();
+                        // imgSrc = link.data('path')+'.svg?t='+n;
+                        imgSrc = link.data('path')+'.svg';
+                    }
 
                     newImg = new Image();
 
@@ -651,6 +679,16 @@
                                 canva.height = newImgH;
                                 ctx.drawImage(newImg, 0, 0, newImgW, newImgH);
                                 var dataURL = canva.toDataURL();
+
+                                if (isVercelRuntime) {
+                                    servePng.attr('href', dataURL);
+                                    fake.addClass('d-none');
+                                    link.removeClass('d-none');
+                                    servePng[0].click();
+                                    preloader.fadeOut('slow');
+                                    return;
+                                }
+
                                 $.ajax({
                                     type: "POST",
                                     url: relative + "ajax/png.php",
