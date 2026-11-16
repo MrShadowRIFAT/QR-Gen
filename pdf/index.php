@@ -5,8 +5,14 @@ $filepath = dirname(dirname(__FILE__)).'/'.$_CONFIG['qrcodes_dir'].'/'.basename(
 if (file_exists($filepath)) {
     include_once dirname(__FILE__).'/vendor/autoload.php';
 
+    $tmpdir = dirname(__FILE__) . '/tmp';
+    if (!file_exists($tmpdir)) {
+        @mkdir($tmpdir, 0755, true);
+        @file_put_contents($tmpdir . '/.htaccess', "Order Deny,Allow\nDeny from all\n");
+    }
+
     $settings = array(
-        'tempDir' => dirname(__FILE__) . '/tmp',
+        'tempDir' => $tmpdir,
     );
 
     if (isset($_GET['fonts'])) {

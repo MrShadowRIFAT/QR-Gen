@@ -17,12 +17,12 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])
 ) {
     exit;
 }
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+ini_set('display_errors', '0');
 require dirname(dirname(__FILE__)).'/config.php';
 
-$imgdata = filter_input(INPUT_POST, 'imgdata', FILTER_SANITIZE_SPECIAL_CHARS);
-$filename = filter_input(INPUT_POST, 'filename', FILTER_SANITIZE_SPECIAL_CHARS);
+$imgdata = isset($_POST['imgdata']) ? $_POST['imgdata'] : false;
+$filename = isset($_POST['filename']) ? basename($_POST['filename']) : false;
 
 if ($imgdata && $filename) {
     $maindir = $_CONFIG['qrcodes_dir'].'/';
@@ -32,13 +32,8 @@ if ($imgdata && $filename) {
     if (file_exists($savedir.$basename.'.svg')) {
         if (!file_exists($savedir.$filename)) {
             $content = false;
-            if (!file_exists($imgdata)) {
-                $b64_data = explode(',', $imgdata); // Separate the base64 data from the data URL
-                if (count($b64_data) == 2) {
-                    $content = base64_decode($b64_data[1]);
-                } else {
-                    $content = file_get_contents($imgdata);
-                }
+            if (preg_match('/^data:image\/(?:png|jpeg|svg\+xml);base64,(.+)$/', $imgdata, $matches)) {
+                $content = base64_decode($matches[1]);
             }
             if (!$content) {
                 exit('error');

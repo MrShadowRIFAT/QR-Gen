@@ -27,6 +27,7 @@
             var pngIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 48 48"><path d="M28.9,18.4l-3.4,3.4V10.5C25.5,9.7,24.8,9,24,9s-1.5,0.7-1.5,1.5v11.4l-3.4-3.4c-0.6-0.6-1.5-0.6-2.1,0 c-0.6,0.6-0.6,1.5,0,2.1l6,6c0.6,0.6,1.5,0.6,2.1,0c0,0,0,0,0,0l6-6c0.6-0.6,0.6-1.5,0-2.1C30.5,17.9,29.5,17.9,28.9,18.4z"/><path d="M42,30V13.5L28.5,0H12C8.7,0,6,2.7,6,6v24c-1.7,0.1-3,1.4-3,3.1v5.8c0,1.7,1.3,3,3,3.1v0c0,3.3,2.7,6,6,6h24 c3.3,0,6-2.7,6-6v0c1.7-0.1,3-1.4,3-3.1v-5.8C45,31.4,43.7,30.1,42,30z M36,45H12c-1.7,0-3-1.3-3-3h30C39,43.7,37.7,45,36,45z M11.5,39.3v-6.6c0-0.4,0.1-0.7,0.3-0.8s0.5-0.2,0.8-0.2h2.2c0.7,0,1.2,0.1,1.5,0.2c0.4,0.1,0.7,0.3,0.9,0.5s0.4,0.5,0.6,0.8 s0.2,0.7,0.2,1.1c0,0.9-0.3,1.5-0.8,2s-1.3,0.7-2.4,0.7h-1.6v2.4c0,0.3-0.1,0.6-0.2,0.8s-0.4,0.3-0.6,0.3c-0.3,0-0.5-0.1-0.6-0.3 S11.5,39.6,11.5,39.3z M19.5,39.3v-6.6c0-0.3,0-0.5,0.1-0.7c0.1-0.2,0.2-0.3,0.4-0.4s0.4-0.2,0.6-0.2c0.2,0,0.3,0,0.4,0.1 s0.2,0.1,0.3,0.2s0.2,0.2,0.3,0.3s0.2,0.3,0.3,0.4l3.3,5.1v-5.1c0-0.3,0.1-0.6,0.2-0.7s0.3-0.2,0.6-0.2c0.3,0,0.4,0.1,0.6,0.2 s0.2,0.4,0.2,0.7v6.8c0,0.8-0.3,1.1-0.9,1.1c-0.2,0-0.3,0-0.4-0.1s-0.2-0.1-0.4-0.2s-0.2-0.2-0.3-0.3s-0.2-0.3-0.3-0.4l-3.3-5v5 c0,0.3-0.1,0.6-0.2,0.7s-0.3,0.3-0.6,0.3c-0.2,0-0.4-0.1-0.6-0.3S19.5,39.7,19.5,39.3z M30.7,38.2c0.5,0.5,1.1,0.8,1.9,0.8 c0.4,0,0.8-0.1,1.1-0.2s0.7-0.3,1.1-0.5V37h-1.3c-0.3,0-0.6,0-0.7-0.1s-0.2-0.3-0.2-0.5c0-0.2,0.1-0.4,0.2-0.5s0.3-0.2,0.6-0.2h2 c0.2,0,0.4,0,0.6,0.1s0.3,0.1,0.4,0.3s0.2,0.4,0.2,0.7v1.6c0,0.2,0,0.4-0.1,0.5s-0.1,0.2-0.2,0.4s-0.3,0.2-0.4,0.3 c-0.5,0.3-1,0.5-1.5,0.6s-1,0.2-1.6,0.2c-0.7,0-1.3-0.1-1.8-0.3s-1-0.5-1.4-0.9s-0.7-0.9-0.9-1.4s-0.3-1.2-0.3-1.8 c0-0.7,0.1-1.3,0.3-1.8s0.5-1,0.9-1.4s0.9-0.7,1.4-0.9s1.2-0.3,1.9-0.3c0.6,0,1.1,0.1,1.5,0.2s0.8,0.3,1.1,0.6s0.5,0.5,0.6,0.7 s0.2,0.5,0.2,0.7c0,0.2-0.1,0.4-0.2,0.6s-0.4,0.2-0.6,0.2c-0.1,0-0.2,0-0.4-0.1s-0.2-0.1-0.3-0.2c-0.2-0.3-0.4-0.6-0.5-0.8 s-0.3-0.3-0.6-0.4s-0.6-0.2-1-0.2c-0.4,0-0.8,0.1-1.1,0.2s-0.6,0.3-0.8,0.6s-0.4,0.6-0.5,1S30,35.4,30,35.9 C30,36.9,30.3,37.6,30.7,38.2z M39,30H9V6c0-1.7,1.3-3,3-3h16.5v6c0,2.5,2,4.5,4.5,4.5h6V30z"/><path d="M15.5,35.4c0.3-0.1,0.5-0.2,0.6-0.4s0.2-0.5,0.2-0.8c0-0.4-0.1-0.7-0.3-0.9c-0.3-0.3-0.8-0.4-1.5-0.4h-1.2v2.6h1.2 C14.8,35.5,15.2,35.5,15.5,35.4z"/></svg>';
             var pdfIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 48 48"><path d="M28.9,18.4l-3.4,3.4V10.5C25.5,9.7,24.8,9,24,9s-1.5,0.7-1.5,1.5v11.4l-3.4-3.4c-0.6-0.6-1.5-0.6-2.1,0 c-0.6,0.6-0.6,1.5,0,2.1l6,6c0.6,0.6,1.5,0.6,2.1,0l6-6c0.6-0.6,0.6-1.5,0-2.1C30.5,17.9,29.5,17.9,28.9,18.4z"/><path d="M24.6,39c0.2,0,0.3-0.1,0.5-0.1c0.2-0.1,0.3-0.2,0.5-0.3c0.6-0.5,0.9-1.4,0.9-2.6c0-0.9-0.1-1.5-0.4-2 c-0.3-0.4-0.6-0.7-1-0.8C24.8,33,24.3,33,23.8,33h-1.2v6h1.4C24.2,39,24.5,39,24.6,39z"/><path d="M42,30V13.5L28.5,0H12C8.7,0,6,2.7,6,6v24c-1.7,0.1-3,1.4-3,3.1v5.8c0,1.7,1.3,3,3,3.1c0,3.3,2.7,6,6,6h24c3.3,0,6-2.7,6-6 c1.7-0.1,3-1.4,3-3.1v-5.8C45,31.4,43.7,30.1,42,30z M36,45H12c-1.7,0-3-1.3-3-3h30C39,43.7,37.7,45,36,45z M12.5,39.5v-6.8 c0-0.4,0.1-0.7,0.3-0.8c0.2-0.2,0.5-0.3,0.9-0.3H16c0.7,0,1.2,0.1,1.6,0.2c0.4,0.1,0.7,0.3,0.9,0.5c0.3,0.2,0.5,0.5,0.6,0.9 c0.1,0.3,0.2,0.7,0.2,1.1c0,0.9-0.3,1.6-0.8,2C17.9,36.7,17.1,37,16,37h-1.6v2.5c0,0.4-0.1,0.6-0.3,0.8c-0.2,0.2-0.4,0.3-0.6,0.3 c-0.3,0-0.5-0.1-0.7-0.3C12.6,40.1,12.5,39.8,12.5,39.5z M20.8,39.1v-6.5c0-0.4,0.1-0.7,0.3-0.8c0.2-0.2,0.5-0.3,0.8-0.3h2.3 c0.6,0,1.1,0.1,1.6,0.2c0.4,0.1,0.8,0.3,1.2,0.6c0.9,0.8,1.4,2,1.4,3.6c0,0.5,0,1-0.1,1.5c-0.1,0.4-0.2,0.8-0.4,1.2 c-0.2,0.4-0.4,0.7-0.7,0.9c-0.2,0.2-0.5,0.4-0.8,0.5c-0.3,0.1-0.6,0.2-0.9,0.3s-0.7,0.1-1.1,0.1h-2.3c-0.3,0-0.6-0.1-0.7-0.1 c-0.2-0.1-0.3-0.2-0.3-0.4C20.8,39.7,20.8,39.4,20.8,39.1z M34.6,35.2c0.3,0,0.5,0.1,0.6,0.2c0.1,0.1,0.2,0.3,0.2,0.5 c0,0.2-0.1,0.4-0.2,0.5c-0.1,0.1-0.3,0.2-0.6,0.2h-2.9v2.9c0,0.4-0.1,0.6-0.2,0.8s-0.4,0.3-0.6,0.3s-0.5-0.1-0.6-0.3 c-0.2-0.2-0.2-0.5-0.2-0.8v-6.8c0-0.3,0-0.5,0.1-0.6s0.2-0.3,0.4-0.4s0.4-0.1,0.6-0.1h4.2c0.3,0,0.5,0.1,0.6,0.2 C36,31.9,36,32,36,32.2c0,0.2-0.1,0.4-0.2,0.5c-0.1,0.1-0.4,0.2-0.6,0.2h-3.5v2.3H34.6z M39,30H9V6c0-1.7,1.3-3,3-3h16.5v6 c0,2.5,2,4.5,4.5,4.5h6V30z"/><path d="M16.6,35.5c0.3-0.1,0.5-0.2,0.6-0.4c0.2-0.2,0.2-0.5,0.2-0.8c0-0.4-0.1-0.7-0.3-1c-0.3-0.3-0.8-0.4-1.6-0.4h-1.2v2.7h1.2 C16,35.6,16.3,35.6,16.6,35.5z"/></svg>';
             var printIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/><path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/></svg>';
+            var copyIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>';
             var loadIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="icon-spin"><path d="M0 11c.511-6.158 5.685-11 12-11s11.489 4.842 12 11h-2.009c-.506-5.046-4.793-9-9.991-9s-9.485 3.954-9.991 9h-2.009zm21.991 2c-.506 5.046-4.793 9-9.991 9s-9.485-3.954-9.991-9h-2.009c.511 6.158 5.685 11 12 11s11.489-4.842 12-11h-2.009z"/></svg>';
             // default options
             var defaults = {
@@ -279,67 +280,6 @@
                     }, 1000);
                 }
 
-                // function updateCode() {
-                //     $('.toast').toast('hide');
-                //     clearTimeout(timer);
-                
-                //     generate_qrcode_btn.attr('disabled', true);
-                //     linksholder.html('');
-                //     timer = setTimeout(function(){
-
-                //         if (!$myForm[0].checkValidity()) {
-                //             submitform.click();
-                //         }
-
-                //         colorpickerback.spectrum('enable');
-                //         preloader.fadeIn(100, function(){
-
-                //             var sendIputs = obj.find(section + ' :input');
-
-                //             var sendata = 'section='+section+'&';
-                //             sendata += sendIputs.filter(function(index, element) {
-                //                 return $(element).val() != "";
-                //             }).serialize();
-
-                //             sendata += '&';
-                //             sendata += sendOptions.filter(function(index, element) {
-                //                 return $(element).val() != "";
-                //             }).serialize();
-
-                //             $.ajax({
-                //                 type: "POST",
-                //                 url: relative + "ajax/process.php",
-                //                 cache: false,
-                //                 data: sendata
-                //             })
-                //             .fail(function(error) {
-                //                 alert_placeholder.html(error.statusText);
-                //                 $('.toast').toast('show');
-                //             })
-                //             .done(function(msg) {
-                //                 if (transparent_bg.prop('checked')) {
-                //                     colorpickerback.spectrum('disable');
-                //                 }
-                //                 var result = JSON.parse(msg);
-                                
-                //                 if (result.hasOwnProperty('errore')) {
-                //                     if (result.errore.hasOwnProperty('msg')) {
-                //                         alert_placeholder.html(result.errore.msg);
-                //                         $('.toast').toast('show');
-                //                     }
-                //                     resultholder.html('<img src="' + result.placeholder + '">');
-                //                     preloader.fadeOut('slow');
-                //                 } else {
-                //                     holdresult.val(msg);
-                //                     generate_qrcode_btn.attr('disabled', false);
-                //                     resultholder.html(result.content);
-                //                     preloader.fadeOut('slow');
-                //                 }
-                //             });
-                //         });
-                //     }, 1000);
-                // }
-
                 // Update preview on input
                 formOnInput.on('input', triggerInput);
 
@@ -428,6 +368,7 @@
                                 downloadlinks +=
                                     '<a class="btn btn-default serve-svg" href="' + svgUrl + '" download="' + basename + '.svg">' + svgIcon + '</a>';
 
+                                downloadlinks += '<button type="button" class="btn btn-default copy-svg" title="Copy SVG">' + copyIcon + '</button>';
                                 downloadlinks += '<button class="btn btn-default print">' + printIcon + '</button>';
 
                                 linksholder.html(downloadlinks);
@@ -435,6 +376,21 @@
 
                                 obj.find('.print').on('click', function(){
                                     printIt('.serve-svg');
+                                });
+                                obj.find('.copy-svg').on('click', async function(e){
+                                    e.preventDefault();
+                                    var btn = $(this);
+                                    var svgContent = (dataObj && dataObj.content) ? dataObj.content : resultholder.find('svg').prop('outerHTML');
+                                    if (svgContent && navigator.clipboard && navigator.clipboard.writeText) {
+                                        try {
+                                            await navigator.clipboard.writeText(svgContent);
+                                            var origHtml = btn.html();
+                                            btn.html('<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="color: #22c55e;"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>');
+                                            setTimeout(function(){ btn.html(origHtml); }, 2000);
+                                        } catch(clipErr) {
+                                            console.warn('Clipboard write failed', clipErr);
+                                        }
+                                    }
                                 });
                             } else {
                                 // Convertiamo il payload nel formato richiesto da chunk-create.php
@@ -474,6 +430,7 @@
                                             '<a target="_blank" class="btn btn-default" href="' + relative + 'pdf/?f=' + getdata.basename + usefonts + '">' + pdfIcon + '</a>';
                                     }
 
+                                    downloadlinks += '<button type="button" class="btn btn-default copy-svg" title="Copy SVG">' + copyIcon + '</button>';
                                     downloadlinks += '<button class="btn btn-default print">' + printIcon + '</button>';
 
                                     linksholder.html(downloadlinks);
@@ -481,6 +438,21 @@
 
                                     obj.find('.print').on('click', function(){
                                         printIt('.serve-svg');
+                                    });
+                                    obj.find('.copy-svg').on('click', async function(e){
+                                        e.preventDefault();
+                                        var btn = $(this);
+                                        var svgContent = (dataObj && dataObj.content) ? dataObj.content : resultholder.find('svg').prop('outerHTML');
+                                        if (svgContent && navigator.clipboard && navigator.clipboard.writeText) {
+                                            try {
+                                                await navigator.clipboard.writeText(svgContent);
+                                                var origHtml = btn.html();
+                                                btn.html('<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="color: #22c55e;"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>');
+                                                setTimeout(function(){ btn.html(origHtml); }, 2000);
+                                            } catch(clipErr) {
+                                                console.warn('Clipboard write failed', clipErr);
+                                            }
+                                        }
                                     });
                                 }
                             }
@@ -495,55 +467,6 @@
                         }
                     });
                 }
-                // function saveCode(){
-                //     var sendata = holdresult.val();
-
-                //     var dataObj = JSON.parse(sendata);
-                //     var usefonts = dataObj.svgfonts ? '' : '&fonts=1';
-
-                //     preloader.fadeIn(100, function(){
-                //         $.ajax({
-                //             type: "POST",
-                //             url: relative + "ajax/create.php",
-                //             cache: false,
-                //             data: {
-                //                 create: sendata
-                //             }
-                //         })
-                //         .fail(function(error) {
-                //             alert_placeholder.html(error.statusText);
-                //             $('.toast').toast('show');
-                //         })
-                //         .done(function(msg) {
-                //             if (msg.length) {
-                //                 var getdata = JSON.parse(msg);
-                //                 if (getdata.error) {
-                //                     alert_placeholder.html(getdata.error);
-                //                     $('.toast').toast('show');
-                //                 } else {
-                //                     var filepath = getdata.filedir+'/'+getdata.basename;
-
-                //                     var downloadlinks = '<button class="btn btn-default svgtopng" data-path="'+filepath+'">'+pngIcon+'</button><a href="#" class="btn btn-default d-none preload-png">'+loadIcon+'</a><a class="serve-png d-none" href="'+filepath+'.png" download="'+getdata.basename+'.png" data-path="'+filepath+'">PNG</a>';
-                //                     downloadlinks = downloadlinks + '<a class="btn btn-default serve-svg" href="'+filepath+'.svg" download="'+getdata.basename+'.svg">'+svgIcon+'</a>';
-                //                     if (!dataObj.nopdf) {
-                //                         downloadlinks = downloadlinks + '<a target="_blank" class="btn btn-default" href="'+relative+'pdf/?f='+getdata.basename+usefonts+'">'+pdfIcon+'</a>';
-                //                     }
-                //                     downloadlinks = downloadlinks + '<button class="btn btn-default print">'+printIcon+'</button>';
-                //                     linksholder.html(downloadlinks);
-                //                     generate_qrcode_btn.attr('disabled', true);
-                //                     obj.find('.print').on('click', function(){
-                //                         printIt('.serve-svg');
-                //                     });
-                //                 }
-                //             }
-
-                //             preloader.fadeOut('slow');
-                //             // Callback
-                //             // option.saveCode(getdata);
-                //         });
-
-                //     });
-                // }
 
                 // Save SVG
                 generate_qrcode_btn.on('click', function(){
@@ -635,7 +558,15 @@
 
                     // Rimuovi completamente la seconda chiamata fetch ridondante
 
-                    // Restituisci la risposta dell'ultimo chunk
+                    // Restituisci la risposta dell'ultimo chunk (ripulita da eventuali caratteri o avvisi iniziali)
+                    if (typeof lastResponse === 'string') {
+                        let trimmed = lastResponse.trim();
+                        let start = trimmed.search(/[\{\[]/);
+                        if (start > 0) {
+                            trimmed = trimmed.substring(start);
+                        }
+                        return trimmed;
+                    }
                     return lastResponse;
                 }
 
