@@ -4,7 +4,7 @@
  * @version   5.3.9
  * @link      http://veno.es/qrcdr/
  */
-$version = '5.3.9';
+$version = '5.4.1';
 
 if (version_compare(phpversion(), '5.4', '<')) {
     exit("QRcdr requires at least PHP version 5.4");
@@ -37,14 +37,18 @@ require $absolute.'/include/head.php';
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta name="color-scheme" content="dark light">
         <title><?php echo qrcdr()->getString('title'); ?></title>
         <meta name="description" content="<?php echo qrcdr()->getString('description'); ?>">
         <meta name="keywords" content="<?php echo qrcdr()->getString('tags'); ?>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="<?php echo $relative; ?>bootstrap/css/bootstrap<?php echo $rtl['css']; ?>.min.css" rel="stylesheet">
         <link href="<?php echo $relative; ?>css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" integrity="sha384-JNhb/AfQ8tCvhjfm2WXKx9qovmn7LcndXYllHYDf2CcTBaBMAiPsjRJeC3f9U8V6" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="<?php echo $relative; ?>js/jquery-3.7.1.min.js"></script>
         <?php
         $custom_page = false;

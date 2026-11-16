@@ -1,7 +1,22 @@
 <?php $sidebarorder = 'left' == qrcdr()->getConfig('sidebar') ? ' order-last order-lg-first' : ' order-last'; ?>
 <input type="hidden" id="qrcdr-relative" value="<?php echo $relative; ?>">
-<div id="qrcdr-generator-section" class="container d-none">
-    <div class="row mt-3">
+<div id="qrcdr-generator-section" class="container qrcdr-generator-wrapper d-none">
+    <div class="qrcdr-generator-hero py-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+            <div>
+                <span class="qrcdr-pill-mini mb-2 d-inline-block"><i class="fa fa-sliders"></i> Studio Configurator</span>
+                <h2 class="qrcdr-studio-title mb-1">Create Custom QR Code</h2>
+                <p class="qrcdr-studio-sub text-muted mb-0">Select your data type, personalize colors &amp; frame design, and download in vector formats.</p>
+            </div>
+            <div>
+                <button type="button" id="btn-back-landing" class="btn btn-outline-secondary qrcdr-back-btn">
+                    <i class="fa fa-arrow-left"></i> <span>Back to Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-2">
 
         <div class="col-lg-4<?php echo $sidebarorder; ?>">
             <?php require dirname(__FILE__).'/placeholder.php'; ?>
