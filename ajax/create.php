@@ -32,8 +32,11 @@ if ($data) {
         $xsl->load('sanitize.xsl');
         $proc = new XSLTProcessor;
         $proc->importStyleSheet($xsl);
-        $xml = simplexml_load_string($precontent);
-        $content = $proc->transformToXML($xml);
+        if (function_exists('libxml_disable_entity_loader')) {
+            @libxml_disable_entity_loader(true);
+        }
+        $xml = simplexml_load_string($precontent, 'SimpleXMLElement', LIBXML_NONET);
+        $content = $xml ? $proc->transformToXML($xml) : false;
     } else {
         $content = $precontent;
     }

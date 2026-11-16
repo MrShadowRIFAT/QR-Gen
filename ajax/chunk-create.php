@@ -3,8 +3,13 @@
  * Chunk uploader per create.php
  * Ricostruisce il payload SVG in modo sicuro evitando blocchi firewall
  */
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+ini_set('display_errors', 0);
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    @session_start();
+}
+header('Content-Type: application/json');
 
 // Leggi input JSON grezzo
 $inputRaw = file_get_contents('php://input');

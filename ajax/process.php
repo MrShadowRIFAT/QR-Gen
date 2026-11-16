@@ -26,8 +26,10 @@ if (qrcdr()->getConfig('debug_mode')) {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 } else {
-    error_reporting(E_ALL ^ E_NOTICE);
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+    ini_set('display_errors', 0);
 }
+header('Content-Type: application/json');
 $output_data = false;
 
 $outdir = qrcdr()->getConfig('qrcodes_dir');
@@ -579,7 +581,7 @@ if ($output_data) {
     $codemargin = $outerframe !== 'none' ? $frames[$outerframe]['frame_border'] * 2 + 1 : 2;
     $content = QRcdr::svg($output_data, $filenamesvg, $errorCorrectionLevel, $matrixPointSize, $codemargin, false, $backcolor, $frontcolor, $optionstyle);
 
-    $svgfonts = (substr($label_font, -4) === '.svg');
+    $svgfonts = (!empty($label_font) && substr($label_font, -4) === '.svg');
 
     $result = array(
         'basename' => $basename,

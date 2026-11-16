@@ -4,7 +4,13 @@
  * Ricostruisce i dati POST e li inoltra a process.php tramite una richiesta cURL interna.
  * Compatibile con PHP >= 5.4 senza avvisi di deprecazione nelle versioni recenti.
  */
-session_start();
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+ini_set('display_errors', 0);
+
+if (session_status() === PHP_SESSION_NONE) {
+    @session_start();
+}
+header('Content-Type: application/json');
 
 // Leggi input JSON
 $inputRaw = file_get_contents('php://input');

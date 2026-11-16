@@ -610,29 +610,38 @@ if (!class_exists('QRcdrFn', false)) {
          */
         public function getBtcRates()
         {
-            // $remote_json = "https://bitpay.com/api/rates/BTC/USD";
-            // $remote_json = "https://api.coinbase.com/v2/exchange-rates?currency=BTC";
-            $remote_json = "https://api.coinbase.com/v2/prices/BTC-USD/spot";
+            $cache_file = dirname(dirname(__FILE__)) . '/' . $this->getConfig('qrcodes_dir', 'qrcodes') . '/btc_cache.json';
+            $json = false;
 
-            $json = @file_get_contents($remote_json);
+            if (file_exists($cache_file) && (time() - filemtime($cache_file) < 3600)) {
+                $json = @file_get_contents($cache_file);
+            }
+
+            if (!$json) {
+                $remote_json = "https://api.coinbase.com/v2/prices/BTC-USD/spot";
+                $ctx = stream_context_create(array('http' => array('timeout' => 2)));
+                $json = @file_get_contents($remote_json, false, $ctx);
+                if ($json) {
+                    @file_put_contents($cache_file, $json);
+                } elseif (file_exists($cache_file)) {
+                    $json = @file_get_contents($cache_file);
+                }
+            }
 
             if ($json) {
                 $data = json_decode($json);
-
-                if ($data) {
-                    // $btc = $data->data->rates->USD;
-                    // $btc = $data->rate;
-                    $btc = $data->data->amount;
-
-                    $dollar = round(1/$btc, 8);
-
-                    $output = '<small class="form-text text-muted">1 BTC = ' . rtrim(rtrim(sprintf('%f', $btc), '0'), ".") . ' USD<br />';
-                    $output .= '1 USD = '.rtrim(rtrim(sprintf('%f', $dollar), '0'), ".").' BTC</small>';
-                    $output .= '<small class="form-text text-muted">Last update: '. date('F d Y').'<br>Spot price from Coinbase</small>';
-
-                    return $output;
+                if ($data && isset($data->data->amount)) {
+                    $btc = (float)$data->data->amount;
+                    if ($btc > 0) {
+                        $dollar = round(1/$btc, 8);
+                        $output = '<small class="form-text text-muted">1 BTC = ' . rtrim(rtrim(sprintf('%f', $btc), '0'), ".") . ' USD<br />';
+                        $output .= '1 USD = '.rtrim(rtrim(sprintf('%f', $dollar), '0'), ".").' BTC</small>';
+                        $output .= '<small class="form-text text-muted">Spot price from Coinbase</small>';
+                        return $output;
+                    }
                 }
             }
+            return '';
         }
 
         /**
@@ -667,7 +676,11 @@ if (!class_exists('QRcdrFn', false)) {
             $relative = $this->relativePath();
             $lang = $this->getLang();
 
-            echo '<script  type="text/javascript" src="'.$relative.'js/popper.min.js"></script>';
+            echo '<script type="text/javascript" src="'.$relative.'bootstrap/js/bootstrap.bundle.min.js"></script>';
+            echo '<script type="text/javascript" src="'.$relative.'js/spectrum/spectrum.min.js"></script>';
+            echo '<script type="text/javascript" src="'.$relative.'js/bootstrap-maxlength.min.js"></script>';
+            echo '<script type="text/javascript" src="'.$relative.'js/cropit/jquery.cropit.min.js"></script>';
+
             // moment.js for event calendar
             if ($this->getConfig('event') == true) {
                 echo '<script src="'.$relative.'js/tempusdominus/js/tempus-dominus.min.js"></script>';
@@ -677,10 +690,6 @@ if (!class_exists('QRcdrFn', false)) {
                 }
             }
             if ($this->getConfig('debug_mode')) {
-                echo '<script type="text/javascript" src="'.$relative.'bootstrap/js/bootstrap.min.js"></script>';
-                echo '<script type="text/javascript" src="'.$relative.'js/spectrum/spectrum.min.js"></script>';
-                echo '<script type="text/javascript" src="'.$relative.'js/bootstrap-maxlength.min.js"></script>';
-                echo '<script type="text/javascript" src="'.$relative.'js/cropit/jquery.cropit.min.js"></script>';
                 echo '<script type="text/javascript" src="'.$relative.'js/qrcdr.js?v='.$version.'"></script>';
                 echo '<script src="'.$relative.'js/call.js?v='.$version.'"></script>';
             } else {
