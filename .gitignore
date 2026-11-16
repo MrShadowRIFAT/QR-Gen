@@ -1,10 +1,5 @@
 __pycache__/
 .venv/
 *.pyc
-
-# Generated QR files and runtime caches
-qrcodes/*
-!qrcodes/index.php
-pdf/tmp/*
-!pdf/tmp/.htaccess
-
+qrcodes/btc_cache.json
+pdf/tmp/
